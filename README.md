@@ -198,3 +198,19 @@ Nhánh 3: Tính toán nghiệm duy nhất (Trường hợp $a \neq 0$)
 -- Vế phải của phép chia (Mẫu số): Kéo khối Txt_SoA.Text gắn vào.
 
 <img width="1305" height="590" alt="{7B9A1B86-D991-4618-91D4-39D020F74E7A}" src="https://github.com/user-attachments/assets/a7c22aa5-cfcb-4f87-943d-d9b80feb47b3" /></P>
+
+c) Logic xử lý khi bấm nút "Quay lại"
+
+- Vào thư mục Btn_Back1 $\rightarrow$ Kéo khối when Btn_Back1.Click do ra màn hình làm việc.
+
+<img width="857" height="983" alt="{B72046CF-40CE-4F9B-8787-0013AA60307A}" src="https://github.com/user-attachments/assets/1bad6adf-8381-4224-bd2a-96a131e4495e" /></p>
+
+- Vào mục Control (Màu vàng) $\rightarrow$ Kéo khối lệnh close screen gắn vào trong. Lệnh này có bản chất là giải phóng (đóng) màn hình giải toán hiện tại để ứng dụng tự động quay trở về màn hình chính (Screen1) nằm ở tầng bên dưới.
+
+<img width="942" height="1018" alt="{B63A3E46-21C4-4BF8-8FD1-F1F0E290FDA6}" src="https://github.com/user-attachments/assets/d745adfe-f4f1-4a22-83ce-a963d22b57a0" /></p>
+
+d) Tại Screen_WebView
+
+- Kéo khối when Btn_Back2.Click do -> Chọn khối close screen.
+
+<img width="1920" height="1026" alt="{3F77FAC3-9AE9-411F-8E9E-94A5F9EC0D91}" src="https://github.com/user-attachments/assets/350d00a5-354b-4dcb-962e-4dfd1b5222b7" /></p>
