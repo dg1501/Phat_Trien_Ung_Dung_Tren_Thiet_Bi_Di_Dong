@@ -163,3 +163,38 @@ Nhánh 1: Kiểm tra trường hợp Vô số nghiệm (Nếu $a = 0$ và $b = 0
 
 Nhánh 2: Kiểm tra trường hợp Vô nghiệm (Nếu $a = 0$ và $b \neq 0$)
 
+- Thực hiện tương tự như nhánh 1, kéo khối logic and gắn vào sau chữ else if.
+
+- Vế trái khối and: So sánh Txt_SoA.Text bằng 0.
+
+- Vế phải khối and: Kéo khối so sánh đổi dấu thành [ ≠ ] (Khác) để so sánh Txt_SoB.Text với số 0.
+
+- Hành động (then): Kéo khối set Lbl_KetQua.Text to và gắn khối chữ "" với nội dung: "Phương trình vô nghiệm".
+
+<img width="1920" height="1027" alt="{5C7E5F1E-B392-4CAF-ADE5-0EA71F94A718}" src="https://github.com/user-attachments/assets/9125ac4b-435c-468c-b163-0b1af337cee7" /></p>
+
+Nhánh 3: Tính toán nghiệm duy nhất (Trường hợp $a \neq 0$)
+
+- Tại nhánh else cuối cùng, kéo khối set Lbl_KetQua.Text to gắn vào.
+
+<img width="1016" height="537" alt="{767DFEFD-39C7-462B-8F6B-F9F4171D63E2}" src="https://github.com/user-attachments/assets/0951503f-50ef-46ed-8346-05451a175853" /></p>
+
+- Vào mục Text $\rightarrow$ Kéo khối join (khối dùng để ghép các chuỗi văn bản lại với nhau) gắn sau chữ to. Bấm bánh răng của khối join để tăng số lượng chân cắm lên 2 chân (nếu chưa đủ).
+
+<img width="681" height="868" alt="{44C56259-8F32-4541-98DC-3CD79C41A653}" src="https://github.com/user-attachments/assets/ddb7066f-9811-48f8-850d-a8404b06e08c" /></p>
+
+- Chân cắm thứ nhất của join: Gắn khối chữ "" và gõ nội dung: "Nghiệm x = ".
+
+<img width="923" height="517" alt="{E3A74FD3-1454-434E-9E8B-3E1D7E1BC084}" src="https://github.com/user-attachments/assets/a8ee112d-b36d-41ae-97a6-630b590c89cc" /></p>
+
+- Chân cắm thứ hai của join: Vào mục Math $\rightarrow$ Kéo khối phép chia [ / ].
+
+<img width="736" height="1012" alt="{E6F4B17B-F09C-45FC-8CC2-A73BFFA3281A}" src="https://github.com/user-attachments/assets/e7804008-d678-40bc-ab9b-cdf30f8f689f" /></p>
+
+-- Vế trái của phép chia (Tử số): Kéo khối phép trừ [ - ] để tính $-b$, lấy số 0 trừ đi Txt_SoB.Text.
+
+<img width="1155" height="622" alt="{4F753B42-A45D-4262-A449-FE93A197D678}" src="https://github.com/user-attachments/assets/ebd2a171-404a-43ae-b78d-a37080c50444" /></p>
+
+-- Vế phải của phép chia (Mẫu số): Kéo khối Txt_SoA.Text gắn vào.
+
+<img width="1305" height="590" alt="{7B9A1B86-D991-4618-91D4-39D020F74E7A}" src="https://github.com/user-attachments/assets/a7c22aa5-cfcb-4f87-943d-d9b80feb47b3" /></P>
