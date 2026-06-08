@@ -1,1 +1,6 @@
-# Phat_Trien_Ung_Dung_Tren_Thiet_Bi_Di_Dong
+## PHÁT TRIỂN ỨNG DỤNG TRÊN THIẾT BỊ DI ĐỘNG 
+### HỌ TÊN: NGUYỄN ĐỨC DƯƠNG
+### LỚP: K58KTP
+### MSSV: K225480106093
+
+---
