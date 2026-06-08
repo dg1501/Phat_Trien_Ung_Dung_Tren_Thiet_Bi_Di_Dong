@@ -61,8 +61,32 @@ b) Cấu hình Screen_GiaiToan (Giải phương trình bậc nhất ax + b = 0)
 
 - Để xây dựng giao diện nhập hệ số và hiển thị kết quả cho bài toán phương trình bậc nhất, ta truy cập vào thanh công cụ Palette, chọn thẻ User Interface và thực hiện kéo thả các thành phần sau vào vùng hiển thị (Viewer):
 
-2 TextBox: Dùng làm nơi cho người dùng nhập hai hệ số $a$ và $b$ của phương trình.1 Button (Giải toán): Đối tượng kích hoạt sự kiện tính toán sau khi người dùng điền đầy đủ dữ liệu.1 Label (Kết quả): Thành phần tĩnh dùng để xuất kết quả của phương trình (Vô nghiệm, Vô số nghiệm hoặc Nghiệm duy nhất) ra màn hình.1 Button (Quay lại): Nút chức năng điều hướng để quay trở về màn hình chính (Screen1).
+2 TextBox: Dùng làm nơi cho người dùng nhập hai hệ số $a$ và $b$ của phương trình.
 
+1 Button (Giải toán): Đối tượng kích hoạt sự kiện tính toán sau khi người dùng điền đầy đủ dữ liệu.
 
-3. Screen_WebView.
+1 Label (Kết quả): Thành phần tĩnh dùng để xuất kết quả của phương trình (Vô nghiệm, Vô số nghiệm hoặc Nghiệm duy nhất) ra màn hình.
 
+1 Button (Quay lại): Nút chức năng điều hướng để quay trở về màn hình chính (Screen1).
+
+<img width="1919" height="1024" alt="image" src="https://github.com/user-attachments/assets/1a09d1e0-6e52-496b-a529-2c15099eb2d8" /></p>
+
+- Thay đổi thuộc tính đối tượng (Properties)
+
+| Tên mặc định | Tên mới (Rename) | Thuộc tính cần thay đổi (Properties) | Mục đích sử dụng |
+| :--- | :--- | :--- | :--- |
+| **TextBox1** | `Txt_SoA` | - **Hint**: "Nhập hệ số a..."<br>- **NumbersOnly**: Tích chọn (True) | Nhận dữ liệu đầu vào của hệ số $a$. Chỉ cho phép bàn phím số hiển thị để tránh lỗi nhập chữ. |
+| **TextBox2** | `Txt_SoB` | - **Hint**: "Nhập hệ số b..."<br>- **NumbersOnly**: Tích chọn (True) | Nhận dữ liệu đầu vào của hệ số $b$. Chỉ cho phép nhập số. |
+| **Button1** | `Btn_GiaiPT` | - **Text**: "Giải Phương Trình"<br>- **BackgroundColor**: Chọn màu tùy ý (ví dụ: Blue) | Bắt sự kiện Click của người dùng để bắt đầu chạy thuật toán giải phương trình. |
+| **Label1** | `Lbl_KetQua` | - **Text**: "Kết quả sẽ hiển thị ở đây"<br>- **FontSize**: 18<br>- **TextColor**: Chọn màu đỏ để nổi bật | Vùng hiển thị câu kết luận nghiệm và giá trị nghiệm $x$ sau khi tính toán. |
+| **Button2** | `Btn_Back1` | - **Text**: "Quay lại Màn hình chính" | Bắt sự kiện Click để thực hiện lệnh đóng màn hình hiện tại, trả ứng dụng về màn hình trước đó. |
+
+<img width="1920" height="1021" alt="{A4236907-A17E-45DB-8E96-C7D25A7D9B84}" src="https://github.com/user-attachments/assets/d643457d-d9d4-46e2-8347-aa12eb8eed3b" /></p>
+
+c) Cấu hình Screen_WebView (Hiển thị trang web):
+
+- Kéo thả: Vào mục User Interface -> Kéo đối tượng WebViewer thả vào màn hình. Kéo thêm 1 Button đặt phía dưới: Đổi tên thành Btn_Back2, Text: "Quay lại".
+
+- Chọn WebViewer1 -> Nhìn sang cột Properties -> Tại mục HomeUrl, dán link hỗ trợ giao diện điện thoại vào (Ví dụ: https://m.tinhte.vn hoặc https://google.com).
+
+<img width="1920" height="1024" alt="{8D6BF69D-3D18-49B3-835B-A7EB67DEAE11}" src="https://github.com/user-attachments/assets/d5ef2fef-750a-4f0c-9050-542654b40cf2" /></p>
