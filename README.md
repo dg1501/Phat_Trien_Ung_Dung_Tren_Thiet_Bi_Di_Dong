@@ -25,8 +25,6 @@ Giao diện chia làm các khu vực chính:
 
 - Properties: Nơi thay đổi thuộc tính (Màu sắc, kích thước, text...) của đối tượng được chọn.
 
----
-
 **Bước 1: Tạo các Screen và Thiết kế Giao diện**
 
 - Ở phía trên cùng, bấm nút Add Screen để tạo đủ 3 Screen: ***Screen1 (mặc định)***, ***Screen_GiaiToan***, và ***Screen_WebView***
@@ -90,3 +88,78 @@ c) Cấu hình Screen_WebView (Hiển thị trang web):
 - Chọn WebViewer1 -> Nhìn sang cột Properties -> Tại mục HomeUrl, dán link hỗ trợ giao diện điện thoại vào (Ví dụ: https://m.tinhte.vn hoặc https://google.com).
 
 <img width="1920" height="1024" alt="{8D6BF69D-3D18-49B3-835B-A7EB67DEAE11}" src="https://github.com/user-attachments/assets/d5ef2fef-750a-4f0c-9050-542654b40cf2" /></p>
+
+---
+
+### 2. Lập trình Logic (Blocks)
+
+- Bấm vào nút Blocks ở góc trên bên phải để chuyển sang giao diện lập trình kéo thả.
+
+<img width="1400" height="732" alt="{DBD59746-C409-4756-BE8A-B3D15B1DCB87}" src="https://github.com/user-attachments/assets/20a49ea5-ca5a-4d78-b281-0264b3e988be" /></p>
+
+<img width="1920" height="1023" alt="{580BA35A-42EB-493F-9A5B-DB7527650198}" src="https://github.com/user-attachments/assets/e02399f0-7e8e-4383-bb51-bc13a4b4163c" /></p>
+
+- Kéo khối logic cho từng Screen:
+
+a) Tại Screen1
+
+- Bấm vào Btn_ToiGiaiToan -> Kéo khối when Btn_ToiGiaiToan.Click do.
+
+<img width="1920" height="1029" alt="{270CE57E-47FB-4315-BB38-4485471BC022}" src="https://github.com/user-attachments/assets/bb50eeff-1667-4496-be58-c74baa227c7e" /></p>
+
+<img width="1920" height="1018" alt="{690F87D3-7F1B-47DB-902C-0086DB14BAE7}" src="https://github.com/user-attachments/assets/32be07e9-30b1-4a52-8ba5-13ab29b23fef" /></p>
+
+- Bấm vào mục Control (Màu vàng) -> Kéo khối open another screen screenName.
+
+<img width="1920" height="1034" alt="{E03BDBEF-7273-498F-A810-F6972F2F6EBE}" src="https://github.com/user-attachments/assets/884397e9-51a0-4e21-a82b-cc3e7ca422ed" /></p>
+
+- Bấm vào mục Text (Màu hồng) -> Kéo khối chuỗi trống "", gắn vào và gõ chính xác chữ: Screen_GiaiToan.
+
+<img width="1920" height="1017" alt="{96928F21-3F8E-4852-9862-CA545FC8B9B5}" src="https://github.com/user-attachments/assets/637f226a-56c2-42ad-9e1d-37e936ca2e9e" /></p>
+
+<img width="673" height="182" alt="{6F4DEE8D-EB82-4C99-A694-1E90B1DAA3DC}" src="https://github.com/user-attachments/assets/84f06a52-5263-4fb8-af33-588344db2534" /></p>
+
+- Làm tương tự cho Btn_ToiWebView để mở Screen_WebView.
+
+<img width="1919" height="1019" alt="{DB9A8A19-4522-4553-AC02-B8EC717C4C7C}" src="https://github.com/user-attachments/assets/851b7d16-6286-4d97-940c-4a071d419bad" /></p>
+
+b) Tại Screen_GiaiToan
+
+Bước 1: Logic xử lý khi bấm nút "Giải Phương Trình"
+
+- Bắt sự kiện Click: Vào thư mục Btn_GiaiPT $\rightarrow$ Kéo khối when Btn_GiaiPT.Click do ra màn hình làm việc.
+
+<img width="848" height="922" alt="{271064C6-D983-4E31-A4E4-3147AF1B047D}" src="https://github.com/user-attachments/assets/83de6872-8c1f-45d5-a336-4e3ad68a6803" /></p>
+
+- Khởi tạo cấu trúc điều kiện rẽ nhánh: * Vào mục Control (Màu vàng) $\rightarrow$ Kéo khối lệnh điều kiện if then đặt vào bên trong khối Click.
+
+<img width="1920" height="1026" alt="{6B574A1C-EB11-4464-9251-F42313EC1941}" src="https://github.com/user-attachments/assets/fc0a4ae8-632e-47fd-a6b7-9f51458689ed" /></p>
+
+-- Bấm vào icon bánh răng màu xanh trên khối if vừa kéo, kéo thêm một nhánh else if và một nhánh else từ hộp thoại nhỏ thả vào khối if gốc để mở rộng thành cấu trúc điều kiện 3 nhánh (if - else if - else).
+
+<img width="590" height="327" alt="{3F7B250D-A7C3-49BD-ACF9-6E749EAAFB90}" src="https://github.com/user-attachments/assets/4a1f3b27-0057-4e0e-a8fa-1ec50d112e68" /></p>
+
+Bước 2: Logic các điều kiện phương trình
+
+Nhánh 1: Kiểm tra trường hợp Vô số nghiệm (Nếu $a = 0$ và $b = 0$)
+
+- Vào mục Logic (Màu xanh lục) $\rightarrow$ Kéo khối toán tử and gắn vào ô điều kiện sau chữ if.
+
+<img width="627" height="877" alt="{B6E45B62-63D8-46B7-BF47-4CB5453BB3A4}" src="https://github.com/user-attachments/assets/d06a0fa0-e9b4-4334-9dc0-2eaca4af15a1" /></p>
+
+- Vào mục Math (Màu xanh dương) $\rightarrow$ Kéo khối so sánh [ = ] gắn vào vế trái của khối and. Chọn vế trái là khối Txt_SoA.Text, vế phải là khối số 0 (lấy từ mục Math).
+
+<img width="697" height="878" alt="{B5F4019D-9A91-4838-B4DD-C795DA942DD2}" src="https://github.com/user-attachments/assets/0d046d3b-a4fb-454d-8739-58efe8111b10" /></p>
+
+<img width="746" height="399" alt="{833D6BB6-7CD0-42A4-9CCD-097F824EEACC}" src="https://github.com/user-attachments/assets/8d3b9815-3256-496e-b5a7-7967d55c87d7" /></p>
+
+- Tiếp tục kéo một khối so sánh [ = ] khác gắn vào vế phải của khối and. Chọn vế trái là khối Txt_SoB.Text, vế phải là khối số 0.
+
+<img width="1920" height="1019" alt="{C6F54692-75FD-44E6-A41D-3574C3B942AD}" src="https://github.com/user-attachments/assets/d0b8c12b-d4f3-4b56-a3c8-698800f7ebce" /></p>
+
+- Hành động (then): Vào mục Lbl_KetQua $\rightarrow$ Kéo khối set Lbl_KetQua.Text to gắn vào. Vào mục Text (Màu hồng) $\rightarrow$ Kéo khối chuỗi ký tự trống "", gõ vào nội dung: "Phương trình vô số nghiệm".
+
+<img width="761" height="903" alt="{632EBC50-9381-417B-97FE-CB73E06D1A01}" src="https://github.com/user-attachments/assets/3abb149e-05d8-4602-8a34-482450c4e11d" /></p>
+
+Nhánh 2: Kiểm tra trường hợp Vô nghiệm (Nếu $a = 0$ và $b \neq 0$)
+
