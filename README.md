@@ -269,12 +269,23 @@ Mở Android Studio -> Tạo Project mới -> Chọn Empty Views Activity (hoặ
 
 - Khai báo quyền: Ví dụ app cần quyền Internet và quyền đọc bộ nhớ:
 
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.example.btl_android">
+### Cấu hình các quyền trong ứng dụng
+
+Bổ sung các quyền truy cập Internet và bộ nhớ vào file `AndroidManifest.xml`:
+
+### Cấu hình các quyền trong ứng dụng
+
+Bổ sung các quyền truy cập Internet và bộ nhớ vào file `AndroidManifest.xml`:
+
+```xml
+<manifest xmlns:android="[http://schemas.apple.com/apk/res/android](http://schemas.apple.com/apk/res/android)" package="com.example.btl_android">
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    
     <application ...>
     </application>
 </manifest>
+```
 
 - Mục đích: Để đảm bảo tính bảo mật. Từ Android 6.0+, các quyền nguy hiểm còn phải được người dùng đồng ý lúc đang chạy ứng dụng (Runtime Permission).
 
@@ -288,8 +299,46 @@ Mở Android Studio -> Tạo Project mới -> Chọn Empty Views Activity (hoặ
 
 ***Khái niệm Tham chiếu thay vì Hardcode***
 
-- Trong file giao diện XML (nằm trong res/layout/), thay vì viết cứng chữ: android:text="Nguyễn Văn A" (gọi là Hardcode), ta nên lưu chuỗi này vào file res/values/strings.xml:
+Trong file giao diện XML (nằm trong res/layout/), thay vì viết cứng chữ: android:text="Nguyễn Văn A" (gọi là Hardcode), ta nên lưu chuỗi này vào file res/values/strings.xml:
 
+```xml
 <resources>
     <string name="my_name">Nguyễn Văn A</string>
 </resources>
+```
+
+- Cú pháp tham chiếu trong file XML: @string/my_name
+
+- Cú pháp tham chiếu bằng Code Java: R.string.my_name
+
+- Ưu điểm: Dễ quản lý, khi cần sửa đổi text chỉ cần sửa 1 nơi trong file strings.xml thì toàn bộ app sẽ tự đổi theo.
+
+- Cơ chế Tự động (Auto) của OS: Khi ta tạo các thư mục tài nguyên đặc biệt như res/values-en/ (Tiếng Anh), res/values-vi/ (Tiếng Việt), hay res/values-night/ (Theme tối). Khi người dùng thay đổi LOCATION, LANGUAGE, THEME trên máy, Android OS sẽ tự động tìm đến thư mục tương ứng để lấy giá trị mà không cần lập trình viên viết code kiểm tra logical.
+
+- Tác dụng: Giúp ứng dụng dễ dàng Đa ngôn ngữ hóa (Localization) và hỗ trợ các chế độ màn hình (Dark Mode) một cách mượt mà nhất.
+
+***Đối tượng chứa (ViewGroup) - Ví dụ: LinearLayout***
+
+Là đối tượng dùng để gom các đối tượng con (TextView, Button...) lại theo một quy luật sắp xếp.
+
+- Thuộc tính android:orientation="vertical" sẽ xếp các con kề nhau theo chiều dọc; "horizontal" sẽ xếp theo chiều ngang.
+
+- Thuộc tính android:gravity: Xác định vị trí của nội dung bên trong đối tượng đó (Ví dụ: center là căn giữa).
+
+### 3. Tương tác Code Java và Layout (Tránh Hardcode & Xử lý Sự kiện)
+
+Cách hiển thị Text chuẩn hóa theo cấu hình thiết lập của máy (Tránh Hardcode trong Java):
+
+```xml
+TextView tvName = findViewById(R.id.tvName);
+// Thay vì tvName.setText("Nguyễn Văn A"); ta dùng:
+tvName.setText(getString(R.string.my_name));
+```
+
+***Xử lý Sự kiện Click Button (2 cách phổ biến)***
+
+Để click vào Button trên Layout chạy một đoạn code:
+
+- Cách 1: Khai báo Anonymous Listener (Viết trực tiếp trong Code Java - Khuyên dùng)
+
+    - Layout XML:
