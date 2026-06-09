@@ -214,3 +214,40 @@ d) Tại Screen_WebView
 - Kéo khối when Btn_Back2.Click do -> Chọn khối close screen.
 
 <img width="1920" height="1026" alt="{3F77FAC3-9AE9-411F-8E9E-94A5F9EC0D91}" src="https://github.com/user-attachments/assets/350d00a5-354b-4dcb-962e-4dfd1b5222b7" /></p>
+
+e) Test
+
+BƯỚC 1: Tải ứng dụng MIT App Inventor trên iPhone
+
+- Mở ứng dụng App Store trên iPhone lên.
+
+- Vào ô tìm kiếm và gõ từ khóa: MIT App Inventor (hoặc MIT AI2 Companion).
+
+- Tiến hành tải và cài đặt ứng dụng này về máy (App hoàn toàn miễn phí và chính chủ do học viện MIT phát hành).
+
+BƯỚC 2: Kết nối và đồng bộ ứng dụng từ Máy tính sang iPhone
+
+- Đảm bảo cả máy tính (đang mở trang web code) và iPhone của bạn đang kết nối chung một mạng Wi-Fi (hoặc iPhone phát mạng 4G cho máy tính bắt đều được).
+
+- Trên màn hình máy tính, nhìn lên thanh menu trên cùng $\rightarrow$ Chọn mục Connect $\rightarrow$ Click chọn AI Companion. Lúc này màn hình máy tính sẽ hiển thị một ô chứa mã QR Code và một chuỗi 6 ký tự.
+
+<img width="1920" height="1020" alt="{0DA2A628-BD61-4833-80AF-30DEEEB48D6D}" src="https://github.com/user-attachments/assets/ed6828cc-9099-4972-bf94-485f48544345" /></p>
+
+<img width="1920" height="1027" alt="{AAF0F393-59A4-4A3E-B961-8CE07F5808DD}" src="https://github.com/user-attachments/assets/1548d3d4-b23e-4000-8171-f29c8660841c" /></p>
+
+- Trên iPhone, bạn mở ứng dụng MIT App Inventor vừa tải về lên.
+
+Bạn có 2 cách để kết nối:
+
+- Cách nhanh nhất: Bấm vào nút Scan QR Code (Màu xanh dương) trên iPhone $\rightarrow$ Cấp quyền cho app truy cập Camera $\rightarrow$ Đưa camera lên quét mã QR trên màn hình máy tính.
+
+<img width="870" height="1883" alt="image" src="https://github.com/user-attachments/assets/093ef11f-d741-4489-88f2-aa9e0135b59c" /></p>
+
+- Cách thủ công: Gõ chính xác 6 ký tự hiển thị trên máy tính vào ô character code trên iPhone $\rightarrow$ Bấm nút Connect with code (Màu cam).
+
+<img width="870" height="1883" alt="image" src="https://github.com/user-attachments/assets/eb0fe02a-306a-4a20-8330-6276c4dfed03" /></p>
+
+<img width="870" height="1883" alt="image" src="https://github.com/user-attachments/assets/1432fe52-972d-4be1-be7d-260795fa3b81" /></p>
+
+<img width="870" height="1883" alt="image" src="https://github.com/user-attachments/assets/dd0ccc39-370c-4acb-a347-9e1fc05a6996" /></p>
+
