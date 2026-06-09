@@ -342,3 +342,59 @@ tvName.setText(getString(R.string.my_name));
 - Cách 1: Khai báo Anonymous Listener (Viết trực tiếp trong Code Java - Khuyên dùng)
 
     - Layout XML:
+
+      ```xml
+      <Button
+        android:id="@+id/btnClickMe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bấm vào đây" />
+      ```
+
+    - Code Java (trong hàm onCreate):
+
+      ```xml
+      Button btnClickMe = findViewById(R.id.btnClickMe);
+      btnClickMe.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            // Viết đoạn code muốn thực thi ở đây
+            Toast.makeText(MainActivity.this, "Bạn đã click cách 1!", Toast.LENGTH_SHORT).show();
+        }
+      });
+      ```
+
+- Cách 2: Sử dụng thuộc tính onClick trong XML
+
+    - Layout XML: Thêm thuộc tính android:onClick="xuLyClickButton"
+
+      ```xml
+      <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bấm vào đây"
+        android:onClick="xuLyClickButton" />
+    ```
+
+    - Code Java: Viết một hàm public có tên trùng khớp trong Activity class:
+
+        ```xml
+        public void xuLyClickButton(View view) {
+            // Viết đoạn code muốn thực thi ở đây
+            Toast.makeText(this, "Bạn đã click cách 2!", Toast.LENGTH_SHORT).show();
+        }
+        ```
+### 4. Ứng dụng APP 1: Sử dụng Dữ liệu Chuẩn bị trước trong Assets
+
+***Bản chất thư mục assets:***
+
+- Thư mục assets (Tạo bằng cách: Click chuột phải vào thư mục app -> New -> Folder -> Assets Folder). Khi build app, toàn bộ file trong này (txt, json, csv, hình ảnh...) sẽ được đóng gói nguyên vẹn đi theo file APK cài đặt. App có thể đọc các file này kể cả khi không có mạng Internet (Offline).
+
+    - Cú pháp truy cập bằng Java:
+      
+      `InputStream is = getAssets().open("ten_file.txt");`
+
+    - Lợi ích: Tiết kiệm băng thông, app chạy mượt, dữ liệu tĩnh luôn sẵn sàng ngay khi cài đặt xong app.
+ 
+    - Ứng dụng thực tế: Làm app Cẩm nang bỏ túi, Ẩm thực nấu ăn, hoặc App hướng dẫn học tập.
+
