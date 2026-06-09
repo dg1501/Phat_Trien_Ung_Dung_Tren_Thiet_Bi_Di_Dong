@@ -251,3 +251,45 @@ Bạn có 2 cách để kết nối:
 
 <img width="870" height="1883" alt="image" src="https://github.com/user-attachments/assets/dd0ccc39-370c-4acb-a347-9e1fc05a6996" /></p>
 
+---
+
+## PHẦN 2: VIẾT APP SỬ DỤNG ANDROID STUDIO (JAVA)
+
+Mở Android Studio -> Tạo Project mới -> Chọn Empty Views Activity (hoặc Empty Activity tùy phiên bản nhưng chọn Java) -> Ngôn ngữ: Java.
+
+<img width="1134" height="812" alt="{E64A089E-01F0-48F8-969F-2B4A4568762E}" src="https://github.com/user-attachments/assets/6d015289-6f53-4821-82cf-3d7b79559818" /></p>
+
+<img width="1129" height="811" alt="{BE786445-D3E5-4D2C-9D22-789D34647707}" src="https://github.com/user-attachments/assets/5cd929a8-e327-46ed-bb1e-94e4d0cc49c1" /></p>
+
+### 1. Kiến trúc Android Cơ bản & Vòng đời (Lifecycle)
+
+***AndroidManifest.xml là gì?***
+
+- Nằm trong thư mục app/src/main/AndroidManifest.xml. Đây là file cấu hình bắt buộc của mọi app Android. Nó mô tả cho Hệ điều hành (OS) biết: Tên app, icon, các Activity (màn hình) có trong app, và các quyền (Permissions) mà app cần hệ điều hành cấp phép để hoạt động.
+
+- Khai báo quyền: Ví dụ app cần quyền Internet và quyền đọc bộ nhớ:
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.example.btl_android">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <application ...>
+    </application>
+</manifest>
+
+- Mục đích: Để đảm bảo tính bảo mật. Từ Android 6.0+, các quyền nguy hiểm còn phải được người dùng đồng ý lúc đang chạy ứng dụng (Runtime Permission).
+
+***Vòng đời của một ứng dụng Android (Activity Lifecycle)***
+
+- Khi một Activity chạy, nó đi qua các trạng thái được quản lý bởi các hàm callback: onCreate() -> onStart() -> onResume() -> onPause() -> onStop() -> onDestroy().
+
+- Tại sao code tự sinh luôn có sẵn hàm onCreate()? Vì đây là điểm khởi đầu của một Activity. Hàm này chỉ chạy duy nhất 1 lần khi Activity được khởi tạo. Đây là nơi bắt buộc để thiết lập giao diện (gọi hàm setContentView), khởi tạo các biến, ánh xạ các view (findViewById), giúp app có bộ khung trước khi hiển thị lên màn hình cho người dùng thấy.
+
+### 2. Giao diện (XML) & Quản lý Tài nguyên (Resources)
+
+***Khái niệm Tham chiếu thay vì Hardcode***
+
+- Trong file giao diện XML (nằm trong res/layout/), thay vì viết cứng chữ: android:text="Nguyễn Văn A" (gọi là Hardcode), ta nên lưu chuỗi này vào file res/values/strings.xml:
+
+<resources>
+    <string name="my_name">Nguyễn Văn A</string>
+</resources>
