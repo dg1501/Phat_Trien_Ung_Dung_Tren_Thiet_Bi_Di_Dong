@@ -480,4 +480,24 @@ Bước 3: Kiểm tra quyền mạng Internet (AndroidManifest.xml)
 
 <img width="1738" height="966" alt="{27EB7E17-BB9A-4C04-ABB1-C2BADCDD9C1F}" src="https://github.com/user-attachments/assets/cbde15e7-35db-47dc-b633-5937aa4f1f6a" /></p>
 
+### 7. Test 2 App
+
+a) APP 1
+
+b) APP 2
+
+<img width="1736" height="961" alt="{EA9DC52E-F04E-43A6-95F1-729C9FB027B8}" src="https://github.com/user-attachments/assets/a0e18f5b-19ce-4ead-adc8-fec952686e94" /></p>
+
+<img width="1741" height="963" alt="{7EED73A7-1B21-486E-AE41-7572303D0FD5}" src="https://github.com/user-attachments/assets/72db1298-7275-4e42-864f-3f675217e5b3" /></p>
+
+<img width="1733" height="962" alt="{C2627378-879B-4D5A-B58C-33DC49BDB058}" src="https://github.com/user-attachments/assets/5f7504db-943c-4720-bcdf-5cba5c35577d" /></p>
+
+<img width="1731" height="958" alt="{71DA55FD-73B1-49D1-881A-64CB9E22E155}" src="https://github.com/user-attachments/assets/fa96ce50-e76e-413c-9bee-583fe4bd46e9" /></p>
+
+<img width="1732" height="959" alt="image" src="https://github.com/user-attachments/assets/7514f539-9f1a-4149-b0f5-e5c2f3f21f81" /></p>
+
+<img width="1739" height="963" alt="image" src="https://github.com/user-attachments/assets/1b6b12e0-4649-477a-a4ab-d5b54d25c36e" /></p>
+
+
+
 
