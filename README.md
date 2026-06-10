@@ -448,5 +448,36 @@ b) Bóc tách dữ liệu (Parsing): Hàm parseAndLoadData() lấy chuỗi văn 
 
 c) Hiển thị và Tương tác: ArrayAdapter có nhiệm vụ "bơm" mảng tên bệnh vào thanh chọn thả xuống Spinner. Khi người dùng click chọn vị trí số mấy (position), sự kiện onItemSelected sẽ ngay lập tức đối chiếu sang mảng caseSteps ở đúng vị trí đó để lấy hướng dẫn chi tiết dán lên TextView.
 
+### 5. Ứng dụng 2: Giải phương trình bậc 1 & Gọi API POST dữ liệu lên Server
+
+Bước 1: Cập nhật Giao diện trong activity_giai_toan.xml
+
+- Mở file activity_giai_toan.xml ra, xóa sạch code cũ và dán đè đoạn code thiết kế mới này vào. Giao diện này sẽ gồm 2 ô nhập hệ số $a, b$, một nút bấm tính toán và vùng hiển thị kết quả nghiệm.
+
+<img width="1733" height="959" alt="{6A6794E6-2E9C-401E-8EB7-03C358876FA1}" src="https://github.com/user-attachments/assets/43def2a3-ded0-43be-9794-f41aaeaab278" /></p>
+
+Bước 2: Triển khai Logic Biện luận và Gọi API trong
+
+- Mở file GiaiToanActivity.java lên (nằm trong thư mục java/com.example.app1).
+
+<img width="1735" height="962" alt="{40DED8E2-3F5E-477E-88D1-A30CB3CB724A}" src="https://github.com/user-attachments/assets/7bb6999d-6f87-4f9d-b6a7-854d22379e0b" /></p>
+
+### 6. Khởi tạo và Thiết lập Màn hình WebView (WebViewActivity.java)
+
+Bước 1: Thiết kế Giao diện activity_web_view.xml
+
+- Mở file giao diện tương ứng kéo thả đối tượng WebView dãn tràn toàn màn hình:
+
+<img width="1734" height="966" alt="{8051FA85-4B57-4A8B-BF0E-FF97377DE4C2}" src="https://github.com/user-attachments/assets/ff42a8a8-b83d-488e-976a-7d082fc54342" /></p>
+
+Bước 2: Viết code điều khiển WebView (WebViewActivity.java)
+
+<img width="1749" height="974" alt="{F65B5ACB-C07B-47F1-9AE4-F57A318526F3}" src="https://github.com/user-attachments/assets/7147ceb5-c8bf-430d-b5a3-695abe530b63" /></p>
+
+Bước 3: Kiểm tra quyền mạng Internet (AndroidManifest.xml)
+
+- Bất kể là chạy link trường hay link Google, hệ điều hành Android đều bắt buộc phải có lệnh xin quyền mở cổng mạng. Mở file AndroidManifest.xml lên và kiểm tra xem đã có dòng này chưa, nếu chưa có thì dán vào ngay dưới dòng <manifest ...>
+
+<img width="1738" height="966" alt="{27EB7E17-BB9A-4C04-ABB1-C2BADCDD9C1F}" src="https://github.com/user-attachments/assets/cbde15e7-35db-47dc-b633-5937aa4f1f6a" /></p>
 
 
