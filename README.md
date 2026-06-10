@@ -418,35 +418,29 @@ Bước 1: Tạo thư mục assets và file dữ liệu socuu.json
 
 <img width="1737" height="974" alt="{C4AA7694-0730-4B7D-A1DA-1820AEC25EE8}" src="https://github.com/user-attachments/assets/46fd3108-8fc3-44bc-ba9d-07c818dcc9b1" /></p>
 
-<img width="1742" height="966" alt="{D7565FF1-A0C2-4998-A751-4753C3E2E68D}" src="https://github.com/user-attachments/assets/7aacee9a-3586-4615-ba19-9474e9170033" /></p>
+<img width="1833" height="1056" alt="{FFA5A339-4F86-4819-A442-75F6242AE9B4}" src="https://github.com/user-attachments/assets/8d30bf28-384f-4561-be06-3eb07bd948b5" /></p>
 
 - Thêm nội dung cho file vừa tạo
 
-<img width="1739" height="959" alt="{ACB745B6-B23D-4CDC-B7E3-9EE2DA53F8D7}" src="https://github.com/user-attachments/assets/f482a0c3-f079-4691-8ce3-e8d360b560e4" /></p>
+<img width="1739" height="964" alt="{1E277A2A-229D-46E6-B9F0-46B1FB321DE4}" src="https://github.com/user-attachments/assets/954a4957-ad89-4a35-943b-42f2afce3f30" /></p>
 
-Bước 2: Thiết kế giao diện cho App Sơ cứu này
+Bước 2: Thiết kế giao diện Spinner chọn bệnh (activity_main.xml)
 
-- Để nhanh gọn và tích hợp, có thể tạo một nút bấm phụ ở màn hình chính hoặc làm trực tiếp giao diện này bằng cách sửa đổi file activity_giai_toan.xml hoặc một Activity riêng biệt. Dưới đây là cấu trúc file XML mẫu chứa Spinner (để chọn) và TextView (để hiển thị các bước):
+- Vào thư mục res/layout, mở file activity_main.xml ra, xóa hết code mặc định cũ đi và dán đoạn code giao diện này vào:
 
-<img width="1732" height="963" alt="{05918612-927B-4DE8-B7C6-94928EFE7A69}" src="https://github.com/user-attachments/assets/53368db5-3f6d-42d1-96fa-164f0189a332" /></p>
+<img width="653" height="978" alt="{DC1716BD-5B6B-40F9-9C29-5CE99223E587}" src="https://github.com/user-attachments/assets/25eb4ec9-5f5d-4861-8eea-8c9ca813f804" /></p>
 
-<img width="1735" height="965" alt="{79B9A795-E429-4182-A7BA-090478F8082C}" src="https://github.com/user-attachments/assets/c98cb82e-6954-4c59-bd02-6a0b12e8304f" /></p>
+<img width="1737" height="962" alt="{A37CE37D-93DF-4BB3-80DD-320E46557619}" src="https://github.com/user-attachments/assets/1c435aa2-aa71-43d3-842e-799c7a42cb72" /></p>
 
-Bước 3: Viết Code Java để đọc và phân rã dữ liệu từ Assets
+<img width="1738" height="970" alt="{6D343EFA-A9FF-4AEC-981F-09F59BFC33C4}" src="https://github.com/user-attachments/assets/0acff7fb-0775-4762-a59c-60d94c40b1ed" /></p>
 
-- Mở file Java điều khiển màn hình Sơ cứu
+Bước 3: Bước 3: Đọc và bóc tách dữ liệu JSON (MainActivity.java)
 
-- Dán đoạn code Java xử lý hoàn chỉnh
+- Vào thư mục java, tìm mở file MainActivity.java lên. Hãy xóa sạch ruột bên trong đi và dán đoạn code xử lý logic đọc file JSON từ thư mục assets này vào:
 
-<img width="1731" height="958" alt="{3BF78793-45FE-40C9-A19D-2CCF892E722D}" src="https://github.com/user-attachments/assets/2712d6a0-8d33-4a59-b911-02772241f0bc" /></p>
+<img width="733" height="972" alt="{DAC9E8DF-8FE4-4E24-A712-4F25DB05D62C}" src="https://github.com/user-attachments/assets/c56a34b6-64fd-432d-9987-df3fecc151ee" /></p>
 
-- Giải thích luồng chạy
-
-a) Đọc file thô: Hàm loadJSONFromAsset() mở luồng vào InputStream, đọc file socuu.json dưới dạng các byte nhị phân rồi chuyển thành chuỗi văn bản (String) có định dạng tiếng Việt chuẩn UTF-8.
-
-b) Bóc tách dữ liệu (Parsing): Hàm parseAndLoadData() lấy chuỗi văn bản đó, đưa vào cấu trúc JSONArray. Vòng lặp for sẽ chẻ nhỏ mảng này thành các JSONObject. Từ mỗi Object, ta rút ra giá trị của trường "case" (Tên tình huống) ném vào mảng caseNames, và trường "step" (Các bước cấp cứu) ném vào mảng caseSteps.
-
-c) Hiển thị và Tương tác: ArrayAdapter có nhiệm vụ "bơm" mảng tên bệnh vào thanh chọn thả xuống Spinner. Khi người dùng click chọn vị trí số mấy (position), sự kiện onItemSelected sẽ ngay lập tức đối chiếu sang mảng caseSteps ở đúng vị trí đó để lấy hướng dẫn chi tiết dán lên TextView.
+<img width="1738" height="971" alt="{804FF7FD-788F-4E10-AB5C-45861238327F}" src="https://github.com/user-attachments/assets/670f9924-be3e-437d-a769-339bc668c2a8" /></p>
 
 ### 5. Ứng dụng 2: Giải phương trình bậc 1 & Gọi API POST dữ liệu lên Server
 
