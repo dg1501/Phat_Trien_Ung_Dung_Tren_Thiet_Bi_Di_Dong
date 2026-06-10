@@ -337,13 +337,13 @@ Mở file app/src/main/res/layout/activity_main.xml. Sử dụng layout dạng L
 
 ### 3. Tương tác Code Java và Layout (Tránh Hardcode & Xử lý Sự kiện)
 
-Cách hiển thị Text chuẩn hóa theo cấu hình thiết lập của máy (Tránh Hardcode trong Java):
+Mở file MainActivity.java. Chúng ta sẽ thực hiện ánh xạ view bằng findViewById, gán văn bản chuẩn hóa bằng hàm getString() từ tài nguyên, và sử dụng Anonymous Listener (Cách 1) để xử lý sự kiện bấm nút nhảy màn hình thông qua Intent.
 
-```xml
-TextView tvName = findViewById(R.id.tvName);
-// Thay vì tvName.setText("Nguyễn Văn A"); ta dùng:
-tvName.setText(getString(R.string.my_name));
-```
+Chú ý: Trước khi viết code Intent, bạn cần tạo trước 2 Activity trống mới bằng cách: Click chuột phải vào thư mục gói code (com.example.btl_android) $\rightarrow$ New $\rightarrow$ Activity $\rightarrow$ Empty Views Activity. Đặt tên lần lượt là GiaiToanActivity và WebViewActivity.
+
+<img width="1746" height="1055" alt="{252042ED-B79F-48D5-8965-BA44BF28810F}" src="https://github.com/user-attachments/assets/8845b9f1-cfda-44e7-974f-9c116789ebc7" /></p>
+
+<img width="383" height="741" alt="{6AD6D4CF-0247-4B30-89B2-FFD3E67BC172}" src="https://github.com/user-attachments/assets/bc68e8d3-0ed7-46e7-9c7a-5a28a297a8bc" /></p>
 
 ***Xử lý Sự kiện Click Button (2 cách phổ biến)***
 
@@ -394,6 +394,8 @@ tvName.setText(getString(R.string.my_name));
             Toast.makeText(this, "Bạn đã click cách 2!", Toast.LENGTH_SHORT).show();
         }
         ```
+<img width="1732" height="965" alt="{924241C3-3C67-44A2-9520-E12DF4288538}" src="https://github.com/user-attachments/assets/5a0e37da-3d9e-4bea-96f4-86e99fb3fe39" /></p>
+
 ### 4. Ứng dụng APP 1: Sử dụng Dữ liệu Chuẩn bị trước trong Assets
 
 ***Bản chất thư mục assets:***
@@ -407,4 +409,44 @@ tvName.setText(getString(R.string.my_name));
     - Lợi ích: Tiết kiệm băng thông, app chạy mượt, dữ liệu tĩnh luôn sẵn sàng ngay khi cài đặt xong app.
  
     - Ứng dụng thực tế: Làm app Cẩm nang bỏ túi, Ẩm thực nấu ăn, hoặc App hướng dẫn học tập.
+
+Bước 1: Tạo thư mục assets và file dữ liệu socuu.json
+
+- Tại cây thư mục bên trái của Android Studio, nhấp chuột phải vào thư mục app $\rightarrow$ New $\rightarrow$ Folder $\rightarrow$ Assets Folder $\rightarrow$ Nhấn Finish.
+
+- Nhấp chuột phải vào thư mục assets vừa xuất hiện $\rightarrow$ New $\rightarrow$ File $\rightarrow$ Đặt tên file là socuu.json.
+
+<img width="1737" height="974" alt="{C4AA7694-0730-4B7D-A1DA-1820AEC25EE8}" src="https://github.com/user-attachments/assets/46fd3108-8fc3-44bc-ba9d-07c818dcc9b1" /></p>
+
+<img width="1742" height="966" alt="{D7565FF1-A0C2-4998-A751-4753C3E2E68D}" src="https://github.com/user-attachments/assets/7aacee9a-3586-4615-ba19-9474e9170033" /></p>
+
+- Thêm nội dung cho file vừa tạo
+
+<img width="1739" height="959" alt="{ACB745B6-B23D-4CDC-B7E3-9EE2DA53F8D7}" src="https://github.com/user-attachments/assets/f482a0c3-f079-4691-8ce3-e8d360b560e4" /></p>
+
+Bước 2: Thiết kế giao diện cho App Sơ cứu này
+
+- Để nhanh gọn và tích hợp, có thể tạo một nút bấm phụ ở màn hình chính hoặc làm trực tiếp giao diện này bằng cách sửa đổi file activity_giai_toan.xml hoặc một Activity riêng biệt. Dưới đây là cấu trúc file XML mẫu chứa Spinner (để chọn) và TextView (để hiển thị các bước):
+
+<img width="1732" height="963" alt="{05918612-927B-4DE8-B7C6-94928EFE7A69}" src="https://github.com/user-attachments/assets/53368db5-3f6d-42d1-96fa-164f0189a332" /></p>
+
+<img width="1735" height="965" alt="{79B9A795-E429-4182-A7BA-090478F8082C}" src="https://github.com/user-attachments/assets/c98cb82e-6954-4c59-bd02-6a0b12e8304f" /></p>
+
+Bước 3: Viết Code Java để đọc và phân rã dữ liệu từ Assets
+
+- Mở file Java điều khiển màn hình Sơ cứu
+
+- Dán đoạn code Java xử lý hoàn chỉnh
+
+<img width="1731" height="958" alt="{3BF78793-45FE-40C9-A19D-2CCF892E722D}" src="https://github.com/user-attachments/assets/2712d6a0-8d33-4a59-b911-02772241f0bc" /></p>
+
+- Giải thích luồng chạy
+
+a) Đọc file thô: Hàm loadJSONFromAsset() mở luồng vào InputStream, đọc file socuu.json dưới dạng các byte nhị phân rồi chuyển thành chuỗi văn bản (String) có định dạng tiếng Việt chuẩn UTF-8.
+
+b) Bóc tách dữ liệu (Parsing): Hàm parseAndLoadData() lấy chuỗi văn bản đó, đưa vào cấu trúc JSONArray. Vòng lặp for sẽ chẻ nhỏ mảng này thành các JSONObject. Từ mỗi Object, ta rút ra giá trị của trường "case" (Tên tình huống) ném vào mảng caseNames, và trường "step" (Các bước cấp cứu) ném vào mảng caseSteps.
+
+c) Hiển thị và Tương tác: ArrayAdapter có nhiệm vụ "bơm" mảng tên bệnh vào thanh chọn thả xuống Spinner. Khi người dùng click chọn vị trí số mấy (position), sự kiện onItemSelected sẽ ngay lập tức đối chiếu sang mảng caseSteps ở đúng vị trí đó để lấy hướng dẫn chi tiết dán lên TextView.
+
+
 
