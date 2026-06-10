@@ -478,6 +478,12 @@ Bước 3: Kiểm tra quyền mạng Internet (AndroidManifest.xml)
 
 a) APP 1
 
+<img width="1737" height="964" alt="{92E92C24-AD09-49CC-A337-2D13088ABBC3}" src="https://github.com/user-attachments/assets/1533385a-99ca-423b-aaf0-5a3b98104905" /></p>
+
+<img width="1742" height="962" alt="{52E37C1B-894F-4252-938A-7ACFF8DC85D2}" src="https://github.com/user-attachments/assets/8488c82c-ea5c-4b09-9ef0-23bc86c0e33d" /></P>
+
+<img width="1738" height="963" alt="{C327C9E7-622F-44A8-BF63-697587C6EB80}" src="https://github.com/user-attachments/assets/db195212-5a40-45c8-a27f-64a52808433d" /></p>
+
 b) APP 2
 
 <img width="1736" height="961" alt="{EA9DC52E-F04E-43A6-95F1-729C9FB027B8}" src="https://github.com/user-attachments/assets/a0e18f5b-19ce-4ead-adc8-fec952686e94" /></p>
